@@ -51,7 +51,7 @@ function shouldOptimize(store) {
 
 async function getPhpPort() {
     return await getPort({
-        host: '127.0.0.1',
+        host: '0.0.0.0',
         port: portNumbers(8100, 9000)
     });
 }
