@@ -373,7 +373,7 @@ function serveApp(secret, apiPort, phpIniSettings): Promise<ProcessResult> {
             cwd = join(appPath, 'public');
         }
 
-        const phpServer = callPhp(['-S', `127.0.0.1:${phpPort}`, serverPath], {
+        const phpServer = callPhp(['-S', `0.0.0.0:${phpPort}`, serverPath], {
             cwd: cwd,
             env
         }, phpIniSettings)
