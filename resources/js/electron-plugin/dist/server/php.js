@@ -43,7 +43,7 @@ function shouldOptimize(store) {
 function getPhpPort() {
     return __awaiter(this, void 0, void 0, function* () {
         return yield getPort({
-            host: '127.0.0.1',
+            host: '0.0.0.0',
             port: portNumbers(8100, 9000)
         });
     });
@@ -251,7 +251,7 @@ function serveApp(secret, apiPort, phpIniSettings) {
             serverPath = join(appPath, 'vendor', 'laravel', 'framework', 'src', 'Illuminate', 'Foundation', 'resources', 'server.php');
             cwd = join(appPath, 'public');
         }
-        const phpServer = callPhp(['-S', `127.0.0.1:${phpPort}`, serverPath], {
+        const phpServer = callPhp(['-S', `0.0.0.0:${phpPort}`, serverPath], {
             cwd: cwd,
             env
         }, phpIniSettings);
